@@ -70,10 +70,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const sortedPosts = sortPosts(allBlogs)
   const posts = allCoreContent(sortedPosts)
 
-  let globalTags = {}
+  const globalTags = {}
   posts.map((post) => {
     const { slug, date, title, summary, tags } = post
-    for (let tag of tags) {
+    for (const tag of tags) {
       if (globalTags[tag]) {
         globalTags[tag]++
       } else {
