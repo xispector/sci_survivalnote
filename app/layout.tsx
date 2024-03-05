@@ -13,7 +13,7 @@ import { Metadata } from 'next'
 
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
-import { promises as fs } from 'fs';
+import { promises as fs } from 'fs'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -63,34 +63,32 @@ export const metadata: Metadata = {
 
 const ibm = IBM_Plex_Sans_KR({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700']
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
 })
 
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  
   const sortedPosts = sortPosts(allBlogs)
   const posts = allCoreContent(sortedPosts)
-  
-  let globalTags = {};
+
+  let globalTags = {}
   posts.map((post) => {
-    const { slug, date, title, summary, tags } = post;
+    const { slug, date, title, summary, tags } = post
     for (let tag of tags) {
       if (globalTags[tag]) {
-        globalTags[tag]++;
+        globalTags[tag]++
       } else {
-        globalTags[tag] = 1;
+        globalTags[tag] = 1
       }
     }
-  });
-  const tag_data = await fs.readFile('app/tag-data.json', 'utf-8');
-  
+  })
+  const tag_data = await fs.readFile('app/tag-data.json', 'utf-8')
+
   if (tag_data === JSON.stringify(globalTags)) {
     console.log('No new tags')
   } else {
     fs.writeFile('app/tag-data.json', JSON.stringify(globalTags))
   }
-  
+
   return (
     <html
       lang={siteMetadata.language}
@@ -110,7 +108,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <div className={ibm.className + " flex h-screen flex-col justify-between font-sans"}>
+            <div className={ibm.className + ' flex h-screen flex-col justify-between font-sans'}>
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                 <Header />
                 <main className="mb-auto">{children}</main>

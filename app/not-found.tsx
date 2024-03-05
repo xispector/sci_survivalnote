@@ -15,7 +15,7 @@ export default function NotFound() {
         <p className="mb-8">주소를 한번 더 확인하거나 다른 것들을 한 번 구경해 보세요!</p>
         <Link
           href="/"
-          className="focus:shadow-outline-blue inline rounded-lg border border-transparent bg-white px-4 py-2 text-md font-medium leading-5 text-black shadow-md transition-colors duration-150 hover:bg-slate-200 focus:outline-none dark:hover:bg-blue-500"
+          className="focus:shadow-outline-blue text-md inline rounded-lg border border-transparent bg-white px-4 py-2 font-medium leading-5 text-black shadow-md transition-colors duration-150 hover:bg-slate-200 focus:outline-none dark:hover:bg-blue-500"
         >
           메인 페이지로
         </Link>

@@ -10,14 +10,14 @@ const MAX_DISPLAY = 5
 export default function Home({ posts }) {
   return (
     <>
-    <div className=' bg-[url(/static/images/banner.png)] bg-cover p-7 sm:p-8 md:p-10 rounded-xl'>
-      <h1 className='font-[700] text-md sm:text-lg md:text-xl text-white'>
-        이상한 노력으로 갈고 닦은 <br />
-      </h1>
-      <h1 className='font-[700] text-lg sm:text-xl md:text-2xl text-white mt-2'>
-      "과학고에서의 기록, <br /> 그리고 앞으로의 생존기록"
-      </h1>
-    </div>
+      <div className="rounded-xl bg-[url(/static/images/banner.png)] bg-cover p-7 sm:p-8 md:p-10">
+        <h1 className="text-md font-[700] text-white sm:text-lg md:text-xl">
+          이상한 노력으로 갈고 닦은 <br />
+        </h1>
+        <h1 className="mt-2 text-lg font-[700] text-white sm:text-xl md:text-2xl">
+          "과학고에서의 기록, <br /> 그리고 앞으로의 생존기록"
+        </h1>
+      </div>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
