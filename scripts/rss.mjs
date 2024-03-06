@@ -20,7 +20,11 @@ const generateRssItem = (config, post) => `
 `
 
 const generateRss = (config, posts, page = 'feed.xml') => {
-  console.log(posts[0].date, this)
+  try {
+    console.log(posts[0].date, posts[0].title)
+  } catch (error) {
+    console.log(posts[0].title)
+  }
   return `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
