@@ -109,10 +109,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <div className={ibm.className + ' flex h-screen flex-col justify-between font-sans'}>
-              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-                <Header />
-                <main className="mb-auto">{children}</main>
-              </SearchProvider>
+              {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
+              <Header />
+              <main className="mb-auto">{children}</main>
+              {/* </SearchProvider> */}
               <Footer />
             </div>
           </SectionContainer>
