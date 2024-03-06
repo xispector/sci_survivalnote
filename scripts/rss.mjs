@@ -23,7 +23,7 @@ const generateRss = (config, posts, page = 'feed.xml') => {
   try {
     console.log(posts[0].date, posts[0].title)
   } catch (error) {
-    console.log(posts[0].title)
+    console.log(posts[0])
   }
   return `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
