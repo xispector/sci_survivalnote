@@ -19,7 +19,7 @@ const ibm = IBM_Plex_Sans_KR({
 
 const Header = () => {
   return (
-    <header className="sticky top-0 flex items-center justify-between bg-white py-10 opacity-[80%] dark:bg-black dark:text-white">
+    <header className="sticky top-0 flex items-center justify-between bg-white py-10 opacity-[80%] dark:bg-[#030712] dark:text-white">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className={noto_serif_kr.className + ' flex items-center justify-between'}>
