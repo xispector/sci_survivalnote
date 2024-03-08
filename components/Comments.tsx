@@ -17,15 +17,15 @@ export default function Comments({ slug }: { slug: string }) {
 
   return (
     <>
-      {!loadComments && <button onClick={() => setLoadComments(true)}>Load Comments</button>}
-      {siteMetadata.comments && loadComments && (
+      {!loadComments && <button onClick={() => setLoadComments(true)}>댓글 보기</button>}
+      {loadComments && (
         <>
           <script
             src="https://giscus.app/client.js"
-            data-repo="xispector/sci_survivalnote"
-            data-repo-id="R_kgDOLb3lfA"
-            data-category="Announcements"
-            data-category-id="DIC_kwDOLb3lfM4CdwTz"
+            data-repo={process.env.NEXT_PUBLIC_GISCUS_REPO}
+            data-repo-id={process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID}
+            data-category={process.env.NEXT_PUBLIC_GISCUS_CATEGORY}
+            data-category-id={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
             data-mapping="og:title"
             data-strict="0"
             data-reactions-enabled="1"
